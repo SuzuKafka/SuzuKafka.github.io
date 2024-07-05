@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kawaii Store</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file for styling -->
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img src="img/icon.png" alt="Logo" height="200">
+            <h1>Kawaii Store</h1>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#shop">Shop</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="home">
+        <div class="container">
+            <h2>Welcome to Anime Shop</h2>
+            <p>Your one-stop shop for all things anime!</p>
+        </div>
+    </section>
+
+    <section id="shop">
+        <div class="container">
+            <h2>Our Products</h2>
+            <div class="product-list">
+                <!-- Product Cards or Grid -->
+                <div class="product">
+                    <img src="product1.jpg" alt="Product 1">
+                    <h3>Product Name</h3>
+                    <p>Description of the product.</p>
+                    <p>Price: $XX.XX</p>
+                    <a href="#" class="btn">Buy Now</a>
+                </div>
+                <!-- Repeat for other products -->
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <h2>About Us</h2>
+            <p>Information about your anime shop and its mission.</p>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <p>Get in touch with us for any queries or feedback.</p>
+            <form action="submit_form.php" method="POST">
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Your Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">Your Message:</label>
+                <textarea id="message" name="message" required></textarea>
+                <button type="submit" class="btn">Submit</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Kawaii Store. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="scripts.js"></script> <!-- Link to your JavaScript file for additional functionality -->
+</body>
+</html>
