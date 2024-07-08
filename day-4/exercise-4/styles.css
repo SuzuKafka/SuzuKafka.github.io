@@ -9,6 +9,6 @@
 .card img {
     width: 200px;
     border: 6px solid #FBFFB1;
-    border-radius: 50%;
+    border-radius: 10% 50%;
     background-color: #FFACAC;
 }
