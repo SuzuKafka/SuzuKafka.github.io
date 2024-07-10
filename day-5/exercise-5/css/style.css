@@ -1,1 +1,28 @@
-/** start writing CSS rules under this line **/
+#header {
+    background-color: #9acc66;
+    padding-bottom: 50px;
+}
+
+#mainContent {
+    display: flex;
+}
+
+#sidebar {
+    background-color: #98d8ff;
+    height: 400px;
+    padding: 20px;
+    flex: 3;
+}
+
+#content {
+    background-color: #ffe6aa;
+    height: 400px;
+    padding: 20px;
+    flex: 7;
+    text-align: left;
+}
+
+#footer {
+    background-color: #9acc66;
+    padding-bottom: 30px;
+}

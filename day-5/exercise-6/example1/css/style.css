@@ -1,1 +1,25 @@
-/* Enter your CSS solution here! */
+body {
+    display: flex;
+}
+
+nav {
+    background-color: #b2dfdb;
+    transform: rotate(90deg);
+    flex: 2;
+    max-height: 100px;
+}
+
+.flex-column-container {
+    flex-direction: column;
+    flex: 8;
+}
+
+main {
+    background-color: #e0f2f1;
+    height: 500px;
+}
+
+footer {
+    background-color: #80cbc4;
+    height: 100px;
+}
