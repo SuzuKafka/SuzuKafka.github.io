@@ -1,0 +1,90 @@
+* {
+    box-sizing: border-box;
+  }
+
+  .main-nav {
+    margin-top: 15px;
+    border-bottom: #303030 1px solid;
+    padding-bottom: 10px;
+  }
+
+  .main-nav-link {
+    text-transform: uppercase;
+    margin: 5px;;
+  }
+  
+  body {
+    color: #303030;
+    background-color: #fafafa;
+    font-family: "Helvetica", "Arial", sans-serif;
+  }
+  
+  h1,
+  h2,
+  h3 {
+    color: indigo;
+    font-family: "Georgia", "Times", serif;
+    font-weight: 700;
+  }
+  
+  h1 {
+    text-align: center;
+  }
+
+  h2,
+  h3,
+  li,
+  p,
+  #contact {
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
+
+  .content-container {
+    padding:20px;
+  }
+
+  .content-container-grey {
+    background-color: #ededed;
+    padding: 20px;
+  }
+  
+  p {
+    font-size: 18px;
+    line-height: 1.5;
+  }
+  
+  a {
+    color: darkcyan;
+    text-decoration: none;
+  }
+
+  #contact {
+    display: flex;
+    flex-direction: column;
+
+  }
+
+  #contact input, textarea {
+    margin-bottom: 20px;
+    padding: 10px;
+  }
+
+  #contact button {
+    background-color: green;
+    color: #fafafa;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px 
+  }
+
+  .page-footer {
+    background-color: indigo;
+    color: #fafafa;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  /** START WRITING YOUR CSS CODR FOR PAGE LAYOUT BELOW THIS COMMENT **/ 
