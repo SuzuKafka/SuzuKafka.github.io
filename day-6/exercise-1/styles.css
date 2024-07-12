@@ -1,1 +1,21 @@
-/* YOUR STYLE GOES IN HERE */
+#board .square:nth-child(16n+1),
+#board .square:nth-child(16n+3),
+#board .square:nth-child(16n+5),
+#board .square:nth-child(16n+7),
+#board .square:nth-child(16n+10),
+#board .square:nth-child(16n+12),
+#board .square:nth-child(16n+14),
+#board .square:nth-child(16n+16) {
+    background-color: #eeeed2;
+}
+
+#board .square:nth-child(16n+2),
+#board .square:nth-child(16n+4),
+#board .square:nth-child(16n+6),
+#board .square:nth-child(16n+8),
+#board .square:nth-child(16n+9),
+#board .square:nth-child(16n+11),
+#board .square:nth-child(16n+13),
+#board .square:nth-child(16n+15) {
+    background-color: #769656;
+}

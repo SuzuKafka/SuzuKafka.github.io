@@ -1,1 +1,86 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #bc002d;
+    font-family: Arial, sans-serif;
+}
 
+.card {
+    width: 350px;
+    height: 250px;
+    perspective: 1000px;
+    position: relative;
+}
+
+.card .front,
+.card .back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    transition: transform 0.6s;
+    border: 5px outset lightgray;
+    box-shadow: -20px -10px 30px rgba(0, 0, 0, .75);
+}
+
+.card .front {
+    background-color: #ffffff;
+    color: #bc002d;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.card .back {
+    background-color: #ffffff;
+    color: #bc002d;
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+.card.is-flipped .front {
+    transform: rotateY(-540deg);
+}
+
+.card.is-flipped .back {
+    transform: rotateY(-360deg);
+}
+
+.card .pic {
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.card .logo {
+    position: absolute;
+    top: 30px;
+    left: -20px;
+    transform: rotate(-90deg);
+    width: 80px;
+}
+
+.card h2 {
+    margin: 0;
+}
+
+.card p {
+    margin: 5px 0;
+}
+
+.card a {
+    text-decoration: none;
+}
+
+.card a:hover {
+    text-decoration: underline;
+}
