@@ -1,1 +1,35 @@
-/* Enter your CSS solution here! */
+body {
+    display: flex;
+    flex-direction: column;
+    height: 500px;
+}
+
+header {
+    background-color: #80cbc4;
+    flex: 2;
+}
+
+main {
+    display: flex;
+    flex: 8;
+}
+
+nav {
+    background-color: #ffab00;
+    flex:1;
+}
+
+article {
+    background-color: #ffd54f;
+    flex:3;
+}
+
+aside {
+    background-color: #fff276;
+    flex:2;
+}
+
+footer {
+    background-color: #27a69a;
+    flex: 2;
+}
