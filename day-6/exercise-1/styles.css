@@ -19,3 +19,11 @@
 #board .square:nth-child(16n+15) {
     background-color: #769656;
 }
+
+#board .square {
+    transition: transform .2s;
+}
+
+#board .square:hover{
+    transform: scale(1.2);
+}
