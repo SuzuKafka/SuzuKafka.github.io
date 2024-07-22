@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Fruit</title>
+</head>
+
+<body>
+    <span id="result"></span>
+    <br><br>
+    <span id="result2"></span>
+    <br><br>
+    <span id="result3"></span>
+    <br><br>
+    <span id="result4"></span>
+
+
+    <script>
+
+        let myTeam = [
+            {
+                username: "john",
+                team: "red",
+                score: 5,
+                items: ["ball", "book", "pen"]
+            },
+            {
+                username: "becky",
+                team: "blue",
+                score: 10,
+                items: ["tape", "backpack", "pen"]
+            },
+            {
+                username: "susy",
+                team: "red",
+                score: 55,
+                items: ["ball", "eraser", "pen"]
+            },
+            {
+                username: "tyson",
+                team: "green",
+                score: 1,
+                items: ["book", "pen"]
+            },
+        ];
+
+        let usernames = myTeam.map(member => member.username + '!');
+        document.getElementById("result").textContent = JSON.stringify(usernames);
+
+        usernames = myTeam.map(member => member.username + '?');
+        document.getElementById("result2").textContent = JSON.stringify(usernames);
+
+        let redTeam = myTeam.filter(member => member.team === "red");
+        document.getElementById("result3").textContent = JSON.stringify(redTeam);
+
+        let totalScore = myTeam.reduce((acc, member) => {
+            return acc + member.score;
+        }, 0);
+        document.getElementById("result4").textContent = totalScore;
+
+    </script>
+</body>
+
+</html>

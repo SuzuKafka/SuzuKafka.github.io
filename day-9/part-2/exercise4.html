@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Rabbit Family</title>
+</head>
+<body>
+    <p>Month: <input type="number" id="month" step="1" min="1"></p>
+    <button onclick="calculate()">Calculate</button>
+    <span id="result"></span>
+
+    <script>
+        function calculate() {
+            let number = parseInt(document.getElementById("month").value);
+            let result = document.getElementById("result");
+
+            let a = 1, b = 1, temp;
+
+            if (number === 1) {
+                temp = a;
+            } else if (number === 2) {
+                temp = b;
+            } else {
+                for (let i = 3; i <= number; i++) {
+                    temp = a + b;
+                    a = b;
+                    b = temp;
+                }
+            }
+
+            result.textContent = `Result: ${temp}`;
+
+        }
+    </script>
+</body>
+</html>

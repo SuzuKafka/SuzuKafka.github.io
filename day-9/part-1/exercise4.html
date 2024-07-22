@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dai Siu Game</title>
+</head>
+
+<body>
+    <h1>Dai Siu Game</h1>
+    <div>
+        <p>House Money: <span id="houseMoney">1000</span></p>
+        <p>Your Money: <span id="playerMoney">100</span></p>
+    </div>
+    <div>
+        <p>Bet Amount: <input type="number" id="betAmount" value="10" min="1" max="100"></p>
+        <button onclick="startGame('Big')">Bet on Big (Tài)</button>
+        <button onclick="startGame('Small')">Bet on Small (Xỉu)</button>
+    </div>
+    <div id="result" class="hidden">
+        <p class="dice" id="diceResult"></p>
+        <p id="gameResult"></p>
+        <button onclick="resetGame()">Play Again</button>
+    </div>
+    <script>
+        let houseMoney = 1000;
+        let playerMoney = 100;
+
+        function rollDice() {
+            return Math.floor(Math.random() * 6) + 1;
+        }
+
+        function startGame(playerChoice) {
+            const betAmount = parseInt(document.getElementById('betAmount').value);
+
+            if (betAmount > playerMoney || betAmount <= 0) {
+                alert("Invalid bet amount.");
+                return;
+            }
+
+            const dice1 = rollDice();
+            const dice2 = rollDice();
+            const dice3 = rollDice();
+            const sum = dice1 + dice2 + dice3;
+
+            document.getElementById('diceResult').textContent = `${dice1} ${dice2} ${dice3}`;
+
+            if (dice1 === dice2 && dice2 === dice3) {
+                playerMoney -= betAmount;
+                houseMoney += betAmount;
+                document.getElementById('gameResult').textContent = "All dice are the same. You lose.";
+            } else if (sum >= 4 && sum <= 10) {
+                if (playerChoice === 'Small') {
+                    playerMoney += betAmount;
+                    houseMoney -= betAmount;
+                    document.getElementById('gameResult').textContent = "You win!";
+                } else {
+                    playerMoney -= betAmount;
+                    houseMoney += betAmount;
+                    document.getElementById('gameResult').textContent = "You lose.";
+                }
+            } else if (sum >= 11 && sum <= 17) {
+                if (playerChoice === 'Big') {
+                    playerMoney += betAmount;
+                    houseMoney -= betAmount;
+                    document.getElementById('gameResult').textContent = "You win!";
+                } else {
+                    playerMoney -= betAmount;
+                    houseMoney += betAmount;
+                    document.getElementById('gameResult').textContent = "You lose.";
+                }
+            }
+
+            document.getElementById('houseMoney').textContent = houseMoney;
+            document.getElementById('playerMoney').textContent = playerMoney;
+
+            document.getElementById('result').classList.remove('hidden');
+
+            if (houseMoney <= 0) {
+                alert("Congratulations! You won all the money from the house!");
+            } else if (playerMoney <= 0) {
+                alert("You are out of money. Game over.");
+            }
+        }
+
+        function resetGame() {
+            document.getElementById('result').classList.add('hidden');
+        }
+    </script>
+</body>
+
+</html>

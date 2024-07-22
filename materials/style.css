@@ -1,0 +1,120 @@
+/*
+RMIT University Vietnam
+Course: COSC3058 Web Programming Bootcamp
+Semester: 2024A
+Assessment: Fundamental Programming Challenge
+Author: Ryota Suzuki
+ID: s4075375
+Acknowledgement: https://www.w3schools.com, https://stackoverflow.com, https://developer.mozilla.org/
+*/
+
+body {
+    font-family: 'DM Serif Display', serif;
+}
+
+
+header img[alt="camera"] {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 50%;
+    border: 2px solid #4a90e2;
+}
+
+header h1 {
+    text-align: right;
+}
+
+header strong {
+    color: #4a90e2;
+}
+
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border: 2px dashed grey;
+}
+
+#album {
+    flex: 3;
+    display: flex;
+    flex-wrap: wrap;
+    border: 2px solid grey;
+}
+
+.image-container {
+    flex: 1 0 100%;
+}
+
+.image-container:nth-child(2),
+.image-container:nth-child(3),
+.image-container:nth-child(4) {
+    flex: 1 0 33.33%;
+}
+
+.image-container:nth-child(5),
+.image-container:nth-child(6) {
+    flex: 1 0 50%;
+}
+
+.image-container img {
+    width: 100%;
+}
+
+.image-container h3 {
+    color: #4a90e2;
+}
+
+.image-container a {
+    color: #4a90e2;
+}
+
+#profile {
+    flex: 1;
+    text-align: center;
+    border-left: 2px solid grey;
+}
+
+#profile img {
+    border-radius: 50%;
+    border: 2px solid #f44336;
+}
+
+#profile h2 {
+    color: #f44336;
+}
+
+@media (max-width: 768px) {
+
+    .main {
+        border: block;
+    }
+
+    #album {
+        display: block;
+        border: block;
+    }
+
+    .image-container {
+        border: block;
+        width: 100%;
+    }
+
+
+    header,
+    #profile {
+        text-align: center;
+    }
+
+
+    main {
+        flex-direction: column;
+    }
+
+
+    .image-container img {
+        height: 200px;
+    }
+}

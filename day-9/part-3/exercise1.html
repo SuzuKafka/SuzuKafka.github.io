@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fruit</title>
+</head>
+<body>
+    <span id="result"></span>
+    <br>
+    <span id="result2"></span>
+
+    <script>
+    
+    var fruit = ["Banana", "Apples", "Oranges", "Blueberries"];
+
+    fruit.shift();
+
+    fruit.sort();
+
+    fruit.push("Kiwi");
+
+    fruit.shift();
+
+    fruit.reverse();
+
+    document.getElementById("result").textContent = fruit;
+
+    var fruit2 = ["Banana", ["Apples", ["Oranges"], "Blueberries"]];
+
+    document.getElementById("result2").textContent = fruit2[1][1];
+
+    </script>
+</body>
+</html>

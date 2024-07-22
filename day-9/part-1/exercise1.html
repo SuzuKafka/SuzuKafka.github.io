@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>My Page</title>
+</head>
+
+<body>
+    <span id="resultX"></span>
+    <span id="resultY"></span>
+
+    <script>
+        let x = 10;
+        let y = 20;
+
+        let temp = x;
+        x = y;
+        y = temp;
+
+        document.getElementById("resultX").textContent = "x = " + x;
+        document.getElementById("resultY").textContent = "y = " + y;
+    </script>
+</body>
+
+</html>

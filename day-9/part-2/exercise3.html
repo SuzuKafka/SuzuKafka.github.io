@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Fibonacci</title>
+</head>
+
+<body>
+    <p>Find nth number: <input type="number" id="number" min="1" step="1"></p>
+    <button onclick="fibonacci()">Find</button>
+    <span id="result"></span>
+
+    <script>
+        function fibonacci() {
+            let number = parseInt(document.getElementById("number").value);
+            let result = document.getElementById("result");
+
+            let a = 0, b = 1, temp;
+
+            if (number === 1) {
+                temp = a;
+            } else if (number === 2) {
+                temp = b;
+            } else {
+                for (let i = 3; i <= number; i++) {
+                    temp = a + b;
+                    a = b;
+                    b = temp;
+                }
+            }
+
+            result.textContent = `Result: ${temp}`;
+        }
+    </script>
+</body>
+
+</html>

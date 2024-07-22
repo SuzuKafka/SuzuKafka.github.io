@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Fruit</title>
+</head>
+
+<body>
+    <span id="result"></span>
+
+    <script>
+
+        let items = [
+            { type: 'hat', points: 10 },
+            { type: 'shoes', points: 20 },
+            { type: 'hat', points: 5 },
+            { type: 'scarf', points: 15 },
+            { type: 'shoes', points: 10 }
+        ];
+
+        let points = items.reduce((acc, item) => {
+            acc[item.type] = acc[item.type] || 0;
+            acc[item.type] += item.points;
+            return acc;
+        }, {});
+
+        document.getElementById("result").textContent = JSON.stringify(points);
+
+    </script>
+</body>
+
+</html>
