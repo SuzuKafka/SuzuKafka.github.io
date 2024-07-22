@@ -11,22 +11,32 @@ function calculateBMI() {
 
 
     // Check if the metric system is selected
-
-
     // Calculate BMI using metric units: BMI = weight (kg) / [height (m)]^2
-
-
     // Calculate BMI using imperial units: BMI = 703 * weight (lbs) / [height (in)]^2
-
-
     // Round the BMI to two decimal places for better readability
-
-
     // Determine the BMI category and append it to the result text
+    
+    if (system === 'metric') {
+        bmi = weight / Math.pow(height / 100, 2); // height in cm
+    } else {
+        bmi = 703 * weight / Math.pow(height, 2); // height in inches
+    }
+
+    bmi = bmi.toFixed(2);
+
+    if (bmi < 18.5) {
+        result = `Your BMI is ${bmi}. You are underweight.`;
+    } else if (bmi < 25) {
+        result = `Your BMI is ${bmi}. You have a normal weight.`;
+    } else if (bmi < 30) {
+        result = `Your BMI is ${bmi}. You are overweight.`;
+    } else {
+        result = `Your BMI is ${bmi}. You are obese.`;
+    }
 
 
     // Display the result text in the 'result' div element
-
+    document.getElementById('result').textContent = result;
     
 }
 

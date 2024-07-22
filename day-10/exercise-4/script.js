@@ -10,7 +10,12 @@ function inputLength() {
 
 function createListElement() {
 	var li = document.createElement("li"); // Create a new list item (li) element
+
+	var trashIcon = document.createElement("span"); // Create a new icon element
+	trashIcon.innerHTML = " 🗑️";
+
 	li.appendChild(document.createTextNode(input.value)); // Create a text node for the list item text and append it to the list item
+	li.appendChild(trashIcon); // Append the icon to the list item
 	ul.appendChild(li); // Append the list item to the unordered list (ul)
 	input.value = ""; // Clear the input value after adding the list item
 }
@@ -27,5 +32,15 @@ function addListAfterKeypress(event) {
 	}
 }
 
+function deleteListItem(event) {
+	var target = event.target;
+	if (target.tagName === "SPAN") { 
+		var listItem = target.parentNode; 
+		listItem.remove(); 
+	}
+}
+
 button.addEventListener("click", addListAfterClick); // Add event listener to the button for click event to add a new list item
 input.addEventListener("keypress", addListAfterKeypress); // Add event listener to the input for keypress event to add a new list item
+
+ul.addEventListener("click", deleteListItem);
