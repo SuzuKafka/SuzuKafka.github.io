@@ -6,8 +6,12 @@ function togglePattern() {
   var patternButton = document.getElementById('patternButton');
 
   // now toggle the pattern and the button text, depending on current state using classList
-
-
-  
+  if (myPattern.classList.contains('invisible')) {
+    myPattern.classList.remove('invisible');
+    patternButton.textContent = 'Hide';
+  } else {
+    myPattern.classList.add('invisible');
+    patternButton.textContent = 'Reveal!';
+  }
 
 }

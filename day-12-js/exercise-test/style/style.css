@@ -1,0 +1,53 @@
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: #3457D5;
+    color: white;
+}
+
+h2 {
+    color: #3457D5;
+}
+
+ol {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    background: linear-gradient(to bottom, #3457D5, lightblue);
+    padding: 20px;
+    border: 1px solid black;
+    gap: 10px;
+    list-style: none;
+}
+
+ol li, ul li {
+    padding: 10px;
+    background: white;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+ul {
+    background: linear-gradient(to bottom, lightblue, #3457D5);
+    padding: 20px;
+    border-radius: 5px;
+    list-style: none;
+}
+
+ul li {
+    margin-bottom: 5px;
+}
+
+.name::before {
+    content: "Name: ";
+    font-weight: bold;
+}
+
+.year::before {
+    content: "Year: ";
+    font-weight: bold;
+}
+
+.description::before {
+    content: "Description: ";
+    font-weight: bold;
+}
