@@ -6,73 +6,66 @@ function printError(elemId, hintMsg) {
 // Defining a function to validate form 
 function validateForm() {
     // Retrieving the values of form elements 
-    var name = document.contactForm.name.value;
-    var email = document.contactForm.email.value;
-    var mobile = document.contactForm.mobile.value;
+    var name = document.contactForm.name.value.trim();
+    var email = document.contactForm.email.value.trim();
+    var mobile = document.contactForm.mobile.value.trim();
     var country = document.contactForm.country.value;
     var gender = document.contactForm.gender.value;
     var hobbies = [];
     var checkboxes = document.getElementsByName("hobbies[]");
-    for(var i=0; i < checkboxes.length; i++) {
-        if(checkboxes[i].checked) {
+    for (var i = 0; i < checkboxes.length; i++) {
+        if (checkboxes[i].checked) {
             // Populate hobbies array with selected values
             hobbies.push(checkboxes[i].value);
         }
     }
     
-	// Enter your code here
-    var alertMessage = '';
-    var errorFlag = false;
+    // Clear previous error messages
+    var noError = true;
+    printError("nameErr", "");
+    printError("emailErr", "");
+    printError("mobileErr", "");
+    printError("countryErr", "");
+    printError("genderErr", "");
 
     // Validate name
-    console.log('Name:', name.trim());
-    if (name.trim() === '') {
-        alertMessage += 'Please enter your name\n';
-        errorFlag = true;
+    if (name === "") {
+        printError("nameErr", "Please enter your full name.");
+        noError = false;
     }
 
-    // Validate email address
-    console.log('Email:', email.trim());
-    if (email.trim() === '') {
-        alertMessage += 'Email is required\n';
-        errorFlag = true;
-    } else {
-        var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailPattern.test(email.trim())) {
-            alertMessage += 'Email is not in proper format\n';
-            errorFlag = true;
-        }
+    // Validate email
+    var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (email === "") {
+        printError("emailErr", "Please enter your email address.");
+        noError = false;
+    } else if (!emailPattern.test(email)) {
+        printError("emailErr", "Please enter a valid email address.");
+        noError = false;
     }
 
     // Validate mobile number
-    console.log('Mobile:', mobile.trim());
-    if (mobile.trim() === '') {
-        alertMessage += 'Phone number is required\n';
-        errorFlag = true;
-    } else {
-        if (isNaN(mobile.trim()) || mobile.trim().length != 10) {
-            alertMessage += 'Phone number should be a 10 digit number\n';
-            errorFlag = true;
-        }
+    var mobilePattern = /^\d{10}$/;
+    if (mobile === "") {
+        printError("mobileErr", "Please enter your mobile number.");
+        noError = false;
+    } else if (!mobilePattern.test(mobile)) {
+        printError("mobileErr", "Please enter a valid 10-digit mobile number.");
+        noError = false;
     }
 
-    // Validate country
-    console.log('Country:', country);
-    if (country === 'Select') {
-        alertMessage += 'Please select your country\n';
-        errorFlag = true;
+    // Validate country selection
+    if (country === "Select") {
+        printError("countryErr", "Please select your country.");
+        noError = false;
     }
 
-    // Validate gender
-    console.log (gender);
-    if (!(gender === 'male') || )
-
-    // Validate hobbies
-    console.log (hobbies);
-
-    // Display error message
-    if (errorFlag) {
-        alert(alertMessage);
-        return false;
+    // Validate gender selection
+    if (!gender) {
+        printError("genderErr", "Please select your gender.");
+        noError = false;
     }
-};
+
+    // Return false to prevent form submission if validation fails
+    return noError;
+}
