@@ -1,0 +1,10 @@
+  /**
+  * Modify Bootstrap
+  */
+  .bg-navbar-mycolor {
+    background-color: var(--bs-primary-bg-subtle) ;
+  }
+
+  #maincontent > article:nth-child(odd) {
+    background-color: var(--bs-warning-bg-subtle);
+  }
